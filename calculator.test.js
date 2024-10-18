@@ -26,16 +26,16 @@ describe("String Calculator", () => {
   });
 
   test("throw an error for negative numbers", () => {
-    expect(() => add("-1,5")).toThrow("negative numbers not allowed");
-    expect(() => add("1,-5")).toThrow("negative numbers not allowed");
-    expect(() => add("-1,-5")).toThrow("negative numbers not allowed");
-    expect(() => add("-1\n2,3")).toThrow("negative numbers not allowed");
-    expect(() => add("1\n-2,3")).toThrow("negative numbers not allowed");
-    expect(() => add("1\n2,-3")).toThrow("negative numbers not allowed");
-    expect(() => add("-1\n-2,3")).toThrow("negative numbers not allowed");
-    expect(() => add("1\n-2,-3")).toThrow("negative numbers not allowed");
-    expect(() => add("-1\n-2,-3")).toThrow("negative numbers not allowed");
-    expect(() => add("-1\n-2,-3")).toThrow("negative numbers not allowed");
+    expect(() => add("-1,5")).toThrow("negative numbers not allowed -1");
+    expect(() => add("1,-5")).toThrow("negative numbers not allowed -5");
+    expect(() => add("-1,-5")).toThrow("negative numbers not allowed -1, -5");
+    expect(() => add("-1\n2,3")).toThrow("negative numbers not allowed -1");
+    expect(() => add("1\n-2,3")).toThrow("negative numbers not allowed -2");
+    expect(() => add("1\n2,-3")).toThrow("negative numbers not allowed -3");
+    expect(() => add("-1\n-2,3")).toThrow("negative numbers not allowed -1, -2");
+    expect(() => add("1\n-2,-3")).toThrow("negative numbers not allowed -2, -3");
+    expect(() => add("-1\n2,-3")).toThrow("negative numbers not allowed -1, -3");
+    expect(() => add("-1\n-2,-3")).toThrow("negative numbers not allowed -1, -2, -3");
   });
 
 });
