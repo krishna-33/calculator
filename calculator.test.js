@@ -1,3 +1,7 @@
+const add = require('./calculator');
+
+
+
 describe("String Calculator", () => {
 
   test("return 0 for empty string", () => {
