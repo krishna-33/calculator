@@ -1,4 +1,5 @@
 describe("String Calculator", () => {
+
   test("return 0 for empty string", () => {
     expect(add("")).toBe(0);
   });
@@ -13,6 +14,7 @@ describe("String Calculator", () => {
 
   test("handle any amount of numbers", () => {
     expect(add("1,2,3,4,5,6,7,8,9,10")).toBe(55);
+    expect(add("1,2,3,4,5")).toBe(15);
   });
 
   test("handle new line delimiter", () => {
@@ -21,6 +23,19 @@ describe("String Calculator", () => {
 
   test("handle different delimiters", () => {
     expect(add("//;\n1;2")).toBe(3);
+  });
+
+  test("throw an error for negative numbers", () => {
+    expect(() => add("-1,5")).toThrow("negative numbers not allowed");
+    expect(() => add("1,-5")).toThrow("negative numbers not allowed");
+    expect(() => add("-1,-5")).toThrow("negative numbers not allowed");
+    expect(() => add("-1\n2,3")).toThrow("negative numbers not allowed");
+    expect(() => add("1\n-2,3")).toThrow("negative numbers not allowed");
+    expect(() => add("1\n2,-3")).toThrow("negative numbers not allowed");
+    expect(() => add("-1\n-2,3")).toThrow("negative numbers not allowed");
+    expect(() => add("1\n-2,-3")).toThrow("negative numbers not allowed");
+    expect(() => add("-1\n-2,-3")).toThrow("negative numbers not allowed");
+    expect(() => add("-1\n-2,-3")).toThrow("negative numbers not allowed");
   });
 
 });
