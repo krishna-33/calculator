@@ -8,5 +8,6 @@ const add = (numbers) => {
     let number_str = numbers
 
     number_str = number_str.replace(/\n/g, delimiter)
+    let number_array = number_str.split(delimiter).map(Number)
 
 }
