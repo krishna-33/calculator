@@ -1,5 +1,5 @@
 const add = (numbers) => {
-    
+
   if (numbers == "") {
     return 0;
   }
@@ -15,4 +15,5 @@ const add = (numbers) => {
     throw new Error(`negative numbers not allowed ${negatives.join(", ")}`);
   }
 
+  return number_array.reduce((acc, item) => acc + item, 0)
 };
