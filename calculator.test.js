@@ -15,8 +15,12 @@ describe("String Calculator", () => {
     expect(add("1,2,3,4,5,6,7,8,9,10")).toBe(55);
   });
 
-  test("handle new lines delimiters", () => {
+  test("handle new line delimiter", () => {
     expect(add("1\n2,3")).toBe(6);
+  });
+
+  test("handle different delimiters", () => {
+    expect(add("//;\n1;2")).toBe(3);
   });
 
 });
